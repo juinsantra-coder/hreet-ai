@@ -14,6 +14,12 @@ A local-first Windows starter with a real chat connection to Ollama. This build 
 4. Double-click `START_HREET_AI.bat` in this folder.
 5. Open http://127.0.0.1:8000 if the browser does not open automatically.
 
+## Persistent conversation memory
+- Chat turns are stored in a local SQLite file named `hreet_memory.db` in the app folder.
+- The API exposes `GET /api/memory` and `DELETE /api/memory`.
+- The Chat screen's Clear chat action also clears the saved local conversation.
+- This memory is conversation history, not a complete personal profile or long-term fact extraction system.
+
 ## Notes
 - Chat requests go to the local Ollama service at `127.0.0.1:11434`.
 - The UI checks backend/model availability and reports connection errors instead of returning fake demo answers.
